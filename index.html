@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <canvas id='canvas' style='border: 1px solid; width: 800px; height: 600px;'>
+    <canvas id='canvas' style='border: 1px solid; width: 470px; height: 480px;'>
         Sorry, your browser does not support the canvas tag.
     </canvas>
 
@@ -22,8 +22,8 @@
 
         canvas = document.getElementById('canvas');
         ctx = canvas.getContext('2d');
-        canvas.width = 936;
-        canvas.height = 956;
+        canvas.width = canvas.scrollWidth;
+        canvas.height = canvas.scrollHeight;
 
         tetrisLogo = new Image(161, 70);
         tetrisLogo.onload = DrawTetrisLogo;
@@ -32,7 +32,7 @@
         // image.src = './tetrislogo.png';
 
         // Double the size of elements to fit the screen
-        ctx.scale(2, 2);
+        // ctx.scale(1, 1);
 
         // Draw Canvas background
         ctx.fillStyle = 'black';
@@ -46,6 +46,8 @@
         ctx.fillStyle = 'white';
         ctx.font = '21px Candara';
         ctx.fillText("SCORE", 300, 98);
+
+        ctx.fillRect(100, 100, 21, 21);
 
         // Draw score rectangle
         ctx.strokeRect(300, 107, 161, 24);
