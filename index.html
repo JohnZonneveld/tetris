@@ -14,22 +14,22 @@
 
 
 
-    <script> 
-    function DrawTetrisLogo(){
-    ctx.drawImage(tetrisLogo, 300, 8, 161, 70);
-}
- 
+    <script>
+        function DrawTetrisLogo() {
+            ctx.drawImage(tetrisLogo, 300, 8, 161, 70);
+        }
+
 
         canvas = document.getElementById('canvas');
         ctx = canvas.getContext('2d');
         canvas.width = 936;
         canvas.height = 956;
 
-        tetrisLogo = new Image(161, 54);
+        tetrisLogo = new Image(161, 70);
         tetrisLogo.onload = DrawTetrisLogo;
         tetrisLogo.src = "tetrislogo.png";
-        var image = new Image();
-        image.src = './tetrislogo.png';
+        // var image = new Image();
+        // image.src = './tetrislogo.png';
 
         // Double the size of elements to fit the screen
         ctx.scale(2, 2);
@@ -40,7 +40,7 @@
 
         // Draw gameboard rectangle
         ctx.strokeStyle = 'white';
-        ctx.strokeRect(8, 8, 280, 462);            
+        ctx.strokeRect(8, 8, 280, 462);
 
         // Set font for score label text and draw
         ctx.fillStyle = 'white';
